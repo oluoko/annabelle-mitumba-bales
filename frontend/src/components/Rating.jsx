@@ -1,11 +1,11 @@
-import { Fastar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 const Rating = ({ value, text }) => {
   return (
     <div className="rating">
       <span>
         {value >= 1 ? (
-          <Fastar />
+          <FaStar />
         ) : value >= 0.5 ? (
           <FaStarHalfAlt />
         ) : (
@@ -14,7 +14,7 @@ const Rating = ({ value, text }) => {
       </span>
       <span>
         {value >= 2 ? (
-          <Fastar />
+          <FaStar />
         ) : value >= 1.5 ? (
           <FaStarHalfAlt />
         ) : (
@@ -23,7 +23,7 @@ const Rating = ({ value, text }) => {
       </span>
       <span>
         {value >= 3 ? (
-          <Fastar />
+          <FaStar />
         ) : value >= 2.5 ? (
           <FaStarHalfAlt />
         ) : (
@@ -32,7 +32,7 @@ const Rating = ({ value, text }) => {
       </span>
       <span>
         {value >= 4 ? (
-          <Fastar />
+          <FaStar />
         ) : value >= 3.5 ? (
           <FaStarHalfAlt />
         ) : (
@@ -41,7 +41,7 @@ const Rating = ({ value, text }) => {
       </span>
       <span>
         {value >= 5 ? (
-          <Fastar />
+          <FaStar />
         ) : value >= 4.5 ? (
           <FaStarHalfAlt />
         ) : (
