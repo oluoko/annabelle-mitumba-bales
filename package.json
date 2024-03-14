@@ -1,0 +1,18 @@
+{
+  "name": "annabelle-mitumba-bales",
+  "version": "1.0.0",
+  "description": "Annabelle's eCommerce built withe MERN stack",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/index.js"
+  },
+  "author": "Brian Otieno",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.18.3",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^8.2.1"
+  }
+}
