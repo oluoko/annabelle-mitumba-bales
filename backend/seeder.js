@@ -19,6 +19,6 @@ const importData = async () => {
     await User.deleteMany();
 
     const createdUsers = await User.insertMany(users);
-    const adminUser = createdUser[0]._id;
+    const adminUser = createdUsers[0]._id;
   } catch (error) {}
 };
