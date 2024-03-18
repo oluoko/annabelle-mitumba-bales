@@ -13,16 +13,16 @@ const ProductScreen = () => {
 
   return (
     <>
+      <Link className="btn btn-light my-3" to="/">
+        Go Back
+      </Link>
+
       {isLoading ? (
         <h2>Loading... </h2>
       ) : error ? (
         <div>{error?.data?.message || error.error}</div>
       ) : (
         <>
-          <Link className="btn btn-light my-3" to="/">
-            Go Back
-          </Link>
-
           <Row>
             <Col md={5}>
               <Image src={product.image} alt={product.name} fluid />
