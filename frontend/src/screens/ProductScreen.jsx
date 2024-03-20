@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   Form,
@@ -25,7 +25,7 @@ const ProductScreen = () => {
     error,
   } = useGetProductDetailsQuery(productId);
 
-  console.log([...Array(product.countInStock).keys()]);
+  // console.log([...Array(product.countInStock).keys()]);
 
   return (
     <>
@@ -87,7 +87,7 @@ const ProductScreen = () => {
                     </Row>
                   </ListGroup.Item>
 
-                  {product.countInStock > 0 && (
+                  {product && product.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
                         <Col>Qty</Col>
@@ -97,7 +97,7 @@ const ProductScreen = () => {
                             value={qty}
                             onChange={(e) => setQty(Number(e.target.value))}
                           >
-                            {[...Array(product.countInStock).keys()]}
+                            {/* {[...Array(product.countInStock).keys()]} */}
                           </Form.Control>
                         </Col>
                       </Row>
