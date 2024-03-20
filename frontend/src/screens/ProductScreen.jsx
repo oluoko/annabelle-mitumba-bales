@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import {
   Form,
   Row,
@@ -9,13 +9,18 @@ import {
   Card,
   Button,
 } from "react-bootstrap";
+import { UseDispatch, useDispatch } from "react-redux";
 import Rating from "../components/Rating";
 import { useGetProductDetailsQuery } from "../slices/productsApiSlice";
+import { addToCart } from "../slices/cartSlice";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 
 const ProductScreen = () => {
   const { id: productId } = useParams();
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [qty, setQty] = useState(1);
 
@@ -25,7 +30,10 @@ const ProductScreen = () => {
     error,
   } = useGetProductDetailsQuery(productId);
 
-  // console.log([...Array(product.countInStock).keys()]);
+  const addToCartHandler = () => {
+    dispatch(addToCart({ ...product, qty }));
+    navigate("/cart");
+  };
 
   return (
     <>
