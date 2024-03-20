@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap";
 import Product from "../components/Product";
 import Loader from "../components/Loader.jsx";
-import { useGetProductsQuery } from "../slice/productsApiSlice.js";
+import { useGetProductsQuery } from "../slices/productsApiSlice.js";
 import Message from "../components/Message.jsx";
 
 const HomeScreen = () => {

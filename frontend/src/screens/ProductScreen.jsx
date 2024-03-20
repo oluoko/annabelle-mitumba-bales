@@ -10,7 +10,7 @@ import {
   Button,
 } from "react-bootstrap";
 import Rating from "../components/Rating";
-import { useGetProductDetailsQuery } from "../slice/productsApiSlice";
+import { useGetProductDetailsQuery } from "../slices/productsApiSlice";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 
@@ -114,6 +114,7 @@ const ProductScreen = () => {
                       className="btn-block"
                       type="button"
                       disabled={product.countInStock === 0}
+                      onClick={addToCartHandler}
                     >
                       Add to cart
                     </Button>
