@@ -87,7 +87,7 @@ const ProductScreen = () => {
                     </Row>
                   </ListGroup.Item>
 
-                  {product && product.countInStock > 0 && (
+                  {product.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
                         <Col>Qty</Col>
@@ -97,7 +97,7 @@ const ProductScreen = () => {
                             value={qty}
                             onChange={(e) => setQty(Number(e.target.value))}
                           >
-                            {/* {[...Array(product.countInStock).keys()]} */}
+                            {[...Array(product.countInStock).keys()]}
                           </Form.Control>
                         </Col>
                       </Row>
