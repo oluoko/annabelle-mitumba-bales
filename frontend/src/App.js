@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 import { Outlet } from "react-router-dom";
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
           <Outlet />
         </Container>
       </main>
+      <Footer />
     </>
   );
 };
