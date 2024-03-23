@@ -5,13 +5,23 @@ import Order from "../models/orderModel.js";
 // @route   POST /api/orders
 // @access  Private
 const addOrderItems = asyncHandler(async (req, res) => {
+  const {
+    orderItems,
+    shippingAddress,
+    paymentMethod,
+    itemsPrice,
+    shippingPrice,
+    taxPrice,
+    totalPrice,
+  } = req.body;
+
   if (orderItems && orderItems.length === 0) {
     res.status(400);
     throw new Error("No order items");
     return;
   } else {
     const order = new Order({
-      orderItems: orderItem.map((x) => ({
+      orderItems: orderItems.map((x) => ({
         ...x,
         product: x._id,
         _id: undefined,
