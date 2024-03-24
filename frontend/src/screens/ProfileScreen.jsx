@@ -26,7 +26,7 @@ const ProfileScreen = () => {
       setName(userInfo.name);
       setEmail(userInfo.email);
     }
-  }, [userInfo.name, userInfo.email]);
+  }, [userInfo, userInfo.name, userInfo.email]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -39,8 +39,12 @@ const ProfileScreen = () => {
           name,
           email,
           password,
-        });
-      } catch (err) {}
+        }).unwrap();
+        dispatch(setCredentials(res));
+        toast.success("Profile updated successfully");
+      } catch (err) {
+        toast.error(err?.data?.message || err.error);
+      }
     }
   };
 
