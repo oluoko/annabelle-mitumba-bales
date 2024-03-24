@@ -28,9 +28,20 @@ const ProfileScreen = () => {
     }
   }, [userInfo.name, userInfo.email]);
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
-    console.log("Submit Handler");
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+    } else {
+      try {
+        const res = await updateProfile({
+          _id: userInfo._id,
+          name,
+          email,
+          password,
+        });
+      } catch (err) {}
+    }
   };
 
   return (
