@@ -25,7 +25,17 @@ const ProfileScreen = () => {
     }
   }, [userInfo.name, userInfo.email]);
 
-  return <div>ProfileScreen</div>;
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log("Submit Handler");
+  };
+
+  return (
+    <Row>
+      <Col md={3}></Col>
+      <Col md={9}></Col>
+    </Row>
+  );
 };
 
 export default ProfileScreen;
