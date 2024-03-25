@@ -26,4 +26,15 @@ function checkFileType(file, cb) {
   }
 }
 
+const upload = multer({
+  storage,
+});
+
+router.postt("/", upload.single("image"), (req, res) => {
+  res.send({
+    message: "Image uploaded",
+    image: `/${req.file.path}`,
+  });
+});
+
 export default router;
