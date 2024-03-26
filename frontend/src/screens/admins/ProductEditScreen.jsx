@@ -72,7 +72,15 @@ const ProductEditScreen = () => {
   };
 
   const uploadFileHandler = async (e) => {
-    console.log(e.target.files[0]);
+    const formData = new FormData();
+    formData.append("image", e.target.files[0]);
+    try {
+      const res = await uploadProductImage(formData).unwrap();
+      toast.success(res.message);
+      setImage(res.image);
+    } catch (err) {
+      toast.error(err?.data?.message || err.error);
+    }
   };
 
   return (
@@ -121,6 +129,7 @@ const ProductEditScreen = () => {
               <Form.Control
                 type="file"
                 label="Choose file"
+                className="my-2"
                 onChange={uploadFileHandler}
               ></Form.Control>
             </Form.Group>
