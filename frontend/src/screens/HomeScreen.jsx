@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import Product from "../components/Product";
 import Loader from "../components/Loader.jsx";
 import { useGetProductsQuery } from "../slices/productsApiSlice.js";
-import Meta from "../components/Meta.jsx";
 import Message from "../components/Message.jsx";
 import ProductCarousel from "../components/ProductCarousel.jsx";
 import Paginate from "../components/Paginate.jsx";
@@ -33,7 +32,6 @@ const HomeScreen = () => {
         </Message>
       ) : (
         <>
-          <Meta />
           <h1>Latest Products</h1>
 
           <Row>
